@@ -18,7 +18,7 @@ class Student
   end
 
   def self.find_student(name)
-    Student.all.find do |student|
+    @@all.find do |student| # iterate through @@all because its just a data set - self.all could have other stuff in it
       student.name == name
     end
   end

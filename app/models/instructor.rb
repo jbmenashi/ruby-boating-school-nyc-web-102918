@@ -13,16 +13,16 @@ class Instructor
     @@all
   end
 
-  def self.pass_student(student, test_name)
+  def self.pass_student(student_name, test_name)
     correct_test = BoatingTest.all.find do |test_instance|
-      test_instance.student == student && test_instance.test_name == test_name
+      test_instance.student.name == student_name && test_instance.test_name == test_name
     end
     correct_test.test_status = "passed"
   end
 
-  def self.fail_student(student, test_name)
+  def self.fail_student(student_name, test_name)
     correct_test = BoatingTest.all.find do |test_instance|
-      test_instance.student == student && test_instance.test_name == test_name
+      test_instance.student.name == student_name && test_instance.test_name == test_name
     end
     correct_test.test_status = "failed"
   end
