@@ -39,7 +39,7 @@ class Instructor
       end
     end
     percent_passed = (passed_tests.to_f / total_tests.to_f) * 100
-    percent_passed
+    percent_passed.round(2)
   end
 
 end
